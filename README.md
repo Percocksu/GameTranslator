@@ -60,7 +60,22 @@ You can run the translator with chatgpt or manually update an existing TsStorage
     ]
   }
 ```
-
+### Others
+```yaml
+"AppSettings": {
+ # number of threads chatgpt will run with, higher to make it faster but I would not go higher than 10
+"TranslationThreads": 5,
+# relative path to the temp folder where game files are copied
+"TempDir": "temp",
+"GameConfig": {},
+# your chatgpt key, only required if running the translator
+"ChatGptApiKey": "<your_key>",
+# useless for now, it doesn't translate images yet
+"KeepTempImages": true,
+# if you want to copy decrypted images to the temp folder you can, may spoil the scene for you though
+"ExtractImages": false
+}
+```
 Only the game config is necessary, the rest can be left to default
 
 2. Run the command 
