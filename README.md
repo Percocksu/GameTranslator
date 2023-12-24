@@ -17,32 +17,45 @@ You can run the translator with chatgpt or manually update an existing TsStorage
 ### Game config
 ```json
 "GameConfig": {
-      "Engine": "Rpgm", <- Game engine, only Rpgm for now
-      "DirectoryPath": "E:\\Games\\RJ01130999_1.02", <- path to your game, note that no game files will ever be touched by this program
-      "Version": "mv" <- Rpgm version (only nothing or mv, it changes some paths)
+      //game engine, only Rpgm for now
+      "Engine": "Rpgm",
+      //path to your game, note that no game files will ever be touched by this program
+      "DirectoryPath": "E:\\Games\\RJ01130999_1.02",
+      //Rpgm version (only nothing or mv, it changes some paths)
+      "Version": "mv"
     }
 ```
 ### Settings for translation
 ```json
 "TranslationSettings": {
-    "UpdateJsConst": true, <- Turn off if the game use japanese string in eval, usually it is ok to turn on
-    "PhraseMaxLength": 100, <- Will split the text above this threshold
-    "JsFilesRegex": [ <- Regex for js file path to process, usually only plugins file
+    //Turn off if the game use japanese string in eval, usually it is ok to turn on
+    "UpdateJsConst": true,
+    //Will split the text above this threshold
+    "PhraseMaxLength": 100,
+    //Regex for js file path to process, usually only plugins file
+    "JsFilesRegex": [
       "JsScript\\d+Set",
       "plugins\\.js"
     ],
-    "UnsafePathRegex": { <- Black list dictionnary for json files, key is regex path and value is regex path
-        ".*": ".*parameters\[+\d\]" <- ex: For all file if the path match parameters[<number>] it will not be translated
+    //Black list dictionnary for json files, key is regex path and value is regex path
+    "UnsafePathRegex": {
+        //ex: For all file if the path match parameters[<number>] it will not be translated
+        ".*": ".*parameters\[+\d\]"
     },
-    "UnsafeJsRegex": { <- Black list dictionnary for js files, key is regex path and value is regex path
+    //Black list dictionnary for js files, key is regex path and value is regex path
+    "UnsafeJsRegex": {
       ".*": [
       ]
     },
-    "NoFormatRegex": { <- Black list dictionnary for all files, key is regex path and value is regex path
-      ".*": [ <- Files will still be translated but not formatted (splitted, character replace etc...)
+    //Black list dictionnary for all files, key is regex path and value is regex path
+    "NoFormatRegex": {
+        //Files will still be translated but not formatted (splitted, character replace etc...)
+      ".*": [
       ]
     },
-    "TranslatedReplace": [ <- Manual translation for texts, useful for names
+    //Manual translation for texts, useful for names
+    "TranslatedReplace": [
+        //Example
       { Key: "<some jap>", Value: "Mary" }
     ]
   }
