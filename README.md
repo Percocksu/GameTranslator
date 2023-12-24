@@ -15,7 +15,7 @@ You can run the translator with chatgpt or manually update an existing TsStorage
 1. Fill the appsettings.json in GameTranslator.ConsoleApp
 
 ### Game config
-```json
+```yaml
 "GameConfig": {
 # game engine, only Rpgm for now
       "Engine": "Rpgm",
@@ -26,7 +26,7 @@ You can run the translator with chatgpt or manually update an existing TsStorage
     }
 ```
 ### Settings for translation
-```json
+```yaml
 "TranslationSettings": {
 # Turn off if the game use japanese string in eval, usually it is ok to turn on
     "UpdateJsConst": true,
