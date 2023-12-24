@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameTranslator.FileManager", "GameTranslator.FileManager\GameTranslator.FileManager.csproj", "{64DB9B52-0879-403D-8436-2B2DBCF39854}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameTranslator.Translator", "GameTranslator.Translator\GameTranslator.Translator.csproj", "{F8F285B0-6624-42C3-81B1-2534AF714CB5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameTranslator.Model", "GameTranslator.Model\GameTranslator.Model.csproj", "{566C5D7D-5A49-48F0-9D45-8A5A3833E7B1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameTranslator.Rpgm", "GameTranslator.Rpgm\GameTranslator.Rpgm.csproj", "{D420EFF2-1606-4892-8FA4-132C45BDD4D4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameTranslator.Utils", "GameTranslator.Utils\GameTranslator.Utils.csproj", "{8CBCE0BD-E503-4C4E-AC35-948BE8D7AB3D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameTranslator.ConsoleApp", "GameTranslator.ConsoleApp\GameTranslator.ConsoleApp.csproj", "{2AF897DF-2CB2-4A75-B0AB-D9338C772143}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameTranslator.Service", "GameTranslator.Service\GameTranslator.Service.csproj", "{843BBB82-6F4B-41A4-984A-30959A508322}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{64DB9B52-0879-403D-8436-2B2DBCF39854}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64DB9B52-0879-403D-8436-2B2DBCF39854}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64DB9B52-0879-403D-8436-2B2DBCF39854}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64DB9B52-0879-403D-8436-2B2DBCF39854}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8F285B0-6624-42C3-81B1-2534AF714CB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8F285B0-6624-42C3-81B1-2534AF714CB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8F285B0-6624-42C3-81B1-2534AF714CB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8F285B0-6624-42C3-81B1-2534AF714CB5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{566C5D7D-5A49-48F0-9D45-8A5A3833E7B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{566C5D7D-5A49-48F0-9D45-8A5A3833E7B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{566C5D7D-5A49-48F0-9D45-8A5A3833E7B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{566C5D7D-5A49-48F0-9D45-8A5A3833E7B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D420EFF2-1606-4892-8FA4-132C45BDD4D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D420EFF2-1606-4892-8FA4-132C45BDD4D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D420EFF2-1606-4892-8FA4-132C45BDD4D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D420EFF2-1606-4892-8FA4-132C45BDD4D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8CBCE0BD-E503-4C4E-AC35-948BE8D7AB3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CBCE0BD-E503-4C4E-AC35-948BE8D7AB3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CBCE0BD-E503-4C4E-AC35-948BE8D7AB3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CBCE0BD-E503-4C4E-AC35-948BE8D7AB3D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2AF897DF-2CB2-4A75-B0AB-D9338C772143}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2AF897DF-2CB2-4A75-B0AB-D9338C772143}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2AF897DF-2CB2-4A75-B0AB-D9338C772143}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2AF897DF-2CB2-4A75-B0AB-D9338C772143}.Release|Any CPU.Build.0 = Release|Any CPU
+		{843BBB82-6F4B-41A4-984A-30959A508322}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{843BBB82-6F4B-41A4-984A-30959A508322}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{843BBB82-6F4B-41A4-984A-30959A508322}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{843BBB82-6F4B-41A4-984A-30959A508322}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

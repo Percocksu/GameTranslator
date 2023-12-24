@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\GameTranslator.Model\GameTranslator.Model.csproj" />
+      <ProjectReference Include="..\GameTranslator.Utils\GameTranslator.Utils.csproj" />
+    </ItemGroup>
+
+
+    <ItemGroup>
+      <PackageReference Include="ChatGPT.Net" Version="2.0.0" />
+      <PackageReference Include="DeepL.net" Version="1.7.1" />
+      <PackageReference Include="SharpToken" Version="1.2.12" />
+    </ItemGroup>
+
+</Project>

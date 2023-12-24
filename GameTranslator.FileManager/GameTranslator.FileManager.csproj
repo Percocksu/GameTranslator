@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+
+
+    <ItemGroup>
+      <ProjectReference Include="..\GameTranslator.Model\GameTranslator.Model.csproj" />
+      <ProjectReference Include="..\GameTranslator.Translator\GameTranslator.Translator.csproj" />
+      <ProjectReference Include="..\GameTranslator.Utils\GameTranslator.Utils.csproj" />
+    </ItemGroup>
+
+
+
+    <ItemGroup>
+      <PackageReference Include="LZStringCSharp" Version="1.4.0" />
+      <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    </ItemGroup>
+
+</Project>
