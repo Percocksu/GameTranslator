@@ -33,6 +33,13 @@ public class GameTranslatorService
         _jsExtractor = jsExtractor;
     }
 
+    public async Task CopyFilesToTemp()
+    {
+        await _fileManager.CleanStoredFiles();
+        var files = await _fileManager.FindFilesToTranslate();
+        await _fileManager.StoreFiles(files);
+    }
+    
     public async Task TranslateGame()
     {
         await _fileManager.CleanStoredFiles();
@@ -61,7 +68,6 @@ public class GameTranslatorService
                     .Where(x => x.TextExtract.Unsafe ?? false)
                     .Select(x => x.TextExtract).ToArray());
         }
-        await _translationWriter.WriteJsonTranslationsFromStorage();
 
         if (_translationSettings.UpdateJsConst)
         {
@@ -84,8 +90,13 @@ public class GameTranslatorService
             }
             await _translator.TranslateTextExtracts(textExtracts);
         }
-        await _translationWriter.WriteJsTranslationsFromStorage();
 
         await _logModule.WriteLog($"All temp file updated, you can copy into the game folder");
+    }
+
+    public async Task WriteTranslationsToTemp()
+    {
+        await _translationWriter.WriteJsonTranslationsFromStorage();
+        await _translationWriter.WriteJsTranslationsFromStorage();
     }
 }

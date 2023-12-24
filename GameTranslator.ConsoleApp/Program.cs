@@ -8,6 +8,7 @@ using GameTranslator.Rpgm;
 using GameTranslator.Service;
 using GameTranslator.Translator;
 using GameTranslator.Utils;
+using Lakerfield.ConsoleMenu;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -49,19 +50,56 @@ var builder = new ServiceCollection()
     .BuildServiceProvider();
 
 Console.OutputEncoding = Encoding.UTF8;
-using var scope = builder.CreateScope();
 
-var logModule = scope.ServiceProvider.GetService<ILogModule>();
-var gameTranslator = scope.ServiceProvider.GetService<GameTranslatorService>();
-var translationStorage = scope.ServiceProvider.GetService<ITranslationStorage>();
-
-//await translationStorage.UpdateFile();
-await translationStorage.ClearJapanese();
-await translationStorage.ClearUnsafeJs();
-await translationStorage.ClearUnsafeTranslations();
-await translationStorage.ApplyReplace();
-await gameTranslator.TranslateGame();
-await translationStorage.FixInconsistencies();
-await translationStorage.FixInconsistenciesInNames();
-await logModule.WriteLog("Done");
-Console.ReadLine();
+Console.WriteLine("Choose an option: 1,2,3,4,... or Q to quit");
+await ConsoleMenu.RunMainMenuAndWaitForCompletion(
+    "Game translator", 
+    menu =>
+    {
+        menu.Add(ConsoleKey.D1, "(1) Translate game from settings", async () =>
+        {
+            using var scope = builder.CreateScope();
+            var logModule = scope.ServiceProvider.GetService<ILogModule>();
+            var gameTranslator = scope.ServiceProvider.GetService<GameTranslatorService>();
+            var translationStorage = scope.ServiceProvider.GetService<ITranslationStorage>();
+            await gameTranslator.TranslateGame();
+            await translationStorage.ClearJapanese();
+            await translationStorage.ClearUnsafeJs();
+            await translationStorage.ClearUnsafeTranslations();
+            await translationStorage.ApplyReplace();
+            await translationStorage.FixInconsistencies();
+            await translationStorage.FixInconsistenciesInNames();
+            await gameTranslator.WriteTranslationsToTemp();
+            await logModule.WriteLog("Done");
+        });
+        menu.Add(ConsoleKey.D2, "(2) Copy game files to temp", async () =>
+        {
+            using var scope = builder.CreateScope();
+            var logModule = scope.ServiceProvider.GetService<ILogModule>();
+            var gameTranslator = scope.ServiceProvider.GetService<GameTranslatorService>();
+            await gameTranslator.CopyFilesToTemp();
+            await logModule.WriteLog("Done");
+        });
+        menu.Add(ConsoleKey.D3, "(3) Clean/Update translation storage", async () =>
+        {
+            using var scope = builder.CreateScope();
+            var logModule = scope.ServiceProvider.GetService<ILogModule>();
+            var translationStorage = scope.ServiceProvider.GetService<ITranslationStorage>();
+            await translationStorage.ClearJapanese();
+            await translationStorage.ClearUnsafeJs();
+            await translationStorage.ClearUnsafeTranslations();
+            await translationStorage.ApplyReplace();
+            await translationStorage.FixInconsistencies();
+            await translationStorage.FixInconsistenciesInNames();
+            await logModule.WriteLog("Done");
+        });
+        menu.Add(ConsoleKey.D4, "(4) Apply storage to game files", async () =>
+        {
+            using var scope = builder.CreateScope();
+            var logModule = scope.ServiceProvider.GetService<ILogModule>();
+            var gameTranslator = scope.ServiceProvider.GetService<GameTranslatorService>();
+            await gameTranslator.WriteTranslationsToTemp();
+            await logModule.WriteLog("Done");
+        });
+    }, 
+    onlyExitWhenPressingQuit: true);
